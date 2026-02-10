@@ -36,7 +36,7 @@ jobs:
           sarif_file: tfsec.sarif
           
       - name: Upload Report Artifact
-        uses: action/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         if: success() || failure()  
         with:  
           name: tfsec-report  
@@ -56,7 +56,7 @@ jobs:
           sarif_file: results.sarif
           
       - name: Upload Report Artifact
-        uses: action/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         if: success() || failure()  
         with:  
           name: checkov-report  
