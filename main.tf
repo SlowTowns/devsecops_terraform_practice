@@ -16,4 +16,8 @@ resource "aws_s3_bucket" "devsecops_bucket" {
 resource "aws_s3_bucket_acl" "devsecops_bucket_acl" {
   bucket = aws_s3_bucket.devsecops_bucket.id
   acl    = "public-read" # <--- ¡Aquí está el problema grave!
+  tags = {
+    Name        = "My bucket ACL"
+    Environment = "Dev"
+  }
 }
